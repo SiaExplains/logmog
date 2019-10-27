@@ -14,6 +14,11 @@ let flog = msg => {
     });
 };
 
+// log array as table into console!
+let tlog = arr => {
+    console.table(arr);
+};
+
 // Logging into Console
 let clog = msg => {
     console.log(msg);
@@ -21,5 +26,6 @@ let clog = msg => {
 
 module.exports = {
     clog,
-    flog
+    flog,
+    tlog
 };
