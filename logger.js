@@ -1,31 +1,51 @@
 /*
     logmog
 */
+const EventEmitter = require('events');
 const fs = require('fs');
 
-// Logging into File
-let flog = msg => {
-    fs.writeFile('file.log', msg, err => {
-        if (err) {
-            clog('Error in writing log into file!');
-        } else {
-            clog('Log successfully wrote into file!');
-        }
-    });
-};
+class Logger extends EventEmitter {
+    constructor(useDateTimeFormatter = false) {
+        super();
+        this.useDateTimeFormatter = useDateTimeFormatter;
+    }
 
-// log array as table into console!
-let tlog = arr => {
-    console.table(arr);
-};
+    getFormattedDateTime() {
+        let date = new Date();
+        let result = `[${date.getFullYear()}-${date.getMonth()}-${date.getDay()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}] : `;
+        return result;
+    }
 
-// Logging into Console
-let clog = msg => {
-    console.log(msg);
-};
+    log(message) {
+        console.log(message);
+        this.emit('MessageLogger', { message: 'Message has been logged.' });
+    }
+
+    // Logging into File
+    flog(msg) {
+        fs.writeFile('file.log', msg, err => {
+            if (err) {
+                this.clog('Error in writing log into file!');
+            } else {
+                this.clog('Log successfully wrote into file!');
+            }
+        });
+    }
+
+    // log array as table into console!
+    tlog(arr) {
+        console.table(arr);
+    }
+
+    // Logging into Console
+    clog(msg) {
+        msg = this.useDateTimeFormatter
+            ? this.getFormattedDateTime() + msg
+            : msg;
+        console.log(msg);
+    }
+}
 
 module.exports = {
-    clog,
-    flog,
-    tlog
+    Logger
 };

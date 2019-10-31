@@ -1,10 +1,20 @@
 # Logmog
 
-## The basic features in version 1.0.0
+Logmog is an open-source javascript logging library which is suitable for all kinds of javascript apps, such as reactjs, nodejs, electron, etc.
 
--   write log into console
--   write log arrays as a table into console
--   write log into file (a file with fixed name)
+## Final version
+
+-   Verion 1.1.0 is final version
+
+## Run Demo
+
+To run and test logog use these following commands:
+
+<pre><code>nodemon demo.js</code></pre>
+
+or
+
+<pre><code>node demo.js</code></pre>
 
 ---
 
