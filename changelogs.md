@@ -1,5 +1,10 @@
 # Change Logs
 
+## Version 1.1.1
+
+-   change `flog()` functionallity: `fileWrite()` method to `appendFile()`
+-   apply `formattedDateTimeMiddleware()` to all logging methods.
+
 ## Version 1.1.0
 
 -   change functional structure to class-based

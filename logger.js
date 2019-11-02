@@ -10,20 +10,25 @@ class Logger extends EventEmitter {
         this.useDateTimeFormatter = useDateTimeFormatter;
     }
 
-    getFormattedDateTime() {
+    formattedDateTimeMiddleware(msg) {
         let date = new Date();
         let result = `[${date.getFullYear()}-${date.getMonth()}-${date.getDay()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}] : `;
-        return result;
+
+        msg = this.useDateTimeFormatter ? result + msg : msg;
+        return msg;
     }
 
     log(message) {
+        message = this.formattedDateTimeMiddleware(message);
         console.log(message);
         this.emit('MessageLogger', { message: 'Message has been logged.' });
     }
 
     // Logging into File
     flog(msg) {
-        fs.writeFile('file.log', msg, err => {
+        msg = this.formattedDateTimeMiddleware(msg);
+        msg += '\r\n';
+        fs.appendFile('file.log', msg, err => {
             if (err) {
                 this.clog('Error in writing log into file!');
             } else {
@@ -39,9 +44,7 @@ class Logger extends EventEmitter {
 
     // Logging into Console
     clog(msg) {
-        msg = this.useDateTimeFormatter
-            ? this.getFormattedDateTime() + msg
-            : msg;
+        msg = this.formattedDateTimeMiddleware(msg);
         console.log(msg);
     }
 }

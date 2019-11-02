@@ -4,7 +4,7 @@ Logmog is an open-source javascript logging library which is suitable for all ki
 
 ## Final version
 
--   Verion 1.1.0 is final version
+-   Verion 1.1.1 is final version
 
 ## Run Demo
 
