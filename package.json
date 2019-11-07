@@ -1,0 +1,26 @@
+{
+  "name": "logmog",
+  "version": "1.1.2",
+  "description": "an open-source logging library for javascript-based applications",
+  "main": "logger.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiaQnbr/logmog.git"
+  },
+  "keywords": [
+    "log",
+    "logmog",
+    "console",
+    "file",
+    "custom-log"
+  ],
+  "author": "Siavash Ghanbari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SiaQnbr/logmog/issues"
+  },
+  "homepage": "https://github.com/SiaQnbr/logmog#readme"
+}
