@@ -37,6 +37,11 @@ class Logger extends EventEmitter {
         });
     }
 
+    cflog(msg) {
+        this.flog(msg);
+        this.clog(msg);
+    }
+
     // log array as table into console!
     tlog(arr) {
         console.table(arr);

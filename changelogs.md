@@ -1,5 +1,9 @@
 # Change Logs
 
+## Version 1.1.3
+
+-   add `cflog()` method (logging into file and console at the same time)
+
 ## Version 1.1.2
 
 -   add line function to draw a custom line into console/file/etc.
