@@ -1,5 +1,14 @@
 # Change Logs
 
+## Version 1.1.5
+
+-   remove some extra console message while logging into file (`flog()`)
+-   add `logmid()` that is a simple http middle-ware for logging via `expressjs`
+
+## Version 1.1.4
+
+-   add `cfline()` method (print a line into file and console at the same time)
+
 ## Version 1.1.3
 
 -   add `cflog()` method (logging into file and console at the same time)

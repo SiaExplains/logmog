@@ -32,7 +32,7 @@ class Logger extends EventEmitter {
             if (err) {
                 this.clog('Error in writing log into file!');
             } else {
-                this.clog('Log successfully wrote into file!');
+                // this.clog('Log successfully wrote into file!');
             }
         });
     }
@@ -55,6 +55,10 @@ class Logger extends EventEmitter {
 
     cline(charPattern = '-', count = 20) {
         this.clog(this.line(charPattern, count));
+    }
+    cfline(charPattern = '-', count = 20) {
+        this.cline(charPattern, count);
+        this.fline(charPattern, count);
     }
 
     fline(charPattern = '-', count = 20) {
@@ -90,6 +94,25 @@ class Logger extends EventEmitter {
     }
 }
 
+function logmid(level = 'low') {
+    return function(req, res, next) {
+        let logmog = new Logger(true);
+        let httplog = '';
+        if (level === 'low') {
+            logmog.cflog(
+                `*** Recived a request, ${req.method}: (${req.url}) ***`
+            );
+        } else if (level === 'normal') {
+            logmog.cflog(
+                `*** Recived a request | IP: ${req.ip}, ${req.method}: (${req.url})  ***`
+            );
+        }
+
+        next();
+    };
+}
+
 module.exports = {
-    Logger
+    Logger,
+    logmid
 };
