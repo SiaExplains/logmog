@@ -3,11 +3,13 @@
 */
 const EventEmitter = require('events');
 const fs = require('fs');
+const path = require('path');
 
 class Logger extends EventEmitter {
-    constructor(useDateTimeFormatter = false) {
+    constructor(useDateTimeFormatter = false, logPath = __dirname) {
         super();
         this.useDateTimeFormatter = useDateTimeFormatter;
+        this.logPath = logPath;
     }
 
     formattedDateTimeMiddleware(msg) {
@@ -28,7 +30,7 @@ class Logger extends EventEmitter {
     flog(msg) {
         msg = this.formattedDateTimeMiddleware(msg);
         msg += '\r\n';
-        fs.appendFile('file.log', msg, err => {
+        fs.appendFile(path.join(this.logPath, 'file.log'), msg, err => {
             if (err) {
                 this.clog('Error in writing log into file!');
             } else {
