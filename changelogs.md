@@ -1,5 +1,9 @@
 # Change Logs
 
+## Version 1.1.6
+
+-   accepting log-directory as a parameter from constructor
+
 ## Version 1.1.5
 
 -   remove some extra console message while logging into file (`flog()`)
