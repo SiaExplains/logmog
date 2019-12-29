@@ -32,7 +32,7 @@ class Logger extends EventEmitter {
         msg += '\r\n';
         fs.appendFile(path.join(this.logPath, 'file.log'), msg, err => {
             if (err) {
-                this.clog('Error in writing log into file!');
+                this.clog(`Error in writing log into file! : ${err}`);
             } else {
                 // this.clog('Log successfully wrote into file!');
             }

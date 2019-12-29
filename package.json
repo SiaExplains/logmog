@@ -1,6 +1,6 @@
 {
     "name": "logmog",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "description": "an open-source logging library for javascript-based applications",
     "main": "logger.js",
     "scripts": {

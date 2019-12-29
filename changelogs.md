@@ -1,5 +1,9 @@
 # Change Logs
 
+## Version 1.1.7
+
+-   show error message while writing into file
+
 ## Version 1.1.6
 
 -   accepting log-directory as a parameter from constructor
