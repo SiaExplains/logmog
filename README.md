@@ -9,7 +9,7 @@ Inspired by:
 
 ## Final stable version
 
--   Verion 1.1.6 is final version
+-   Verion 1.1.7 is final version
     to check other version feature-list: ([changelogs.md](changelogs.md))
 
 ## Run Demo

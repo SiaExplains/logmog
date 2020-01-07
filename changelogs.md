@@ -3,6 +3,7 @@
 ## Version 1.1.7
 
 -   show error message while writing into file
+-   receive logmog as second parameter in logmid() middleware
 
 ## Version 1.1.6
 

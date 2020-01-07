@@ -96,10 +96,8 @@ class Logger extends EventEmitter {
     }
 }
 
-function logmid(level = 'low') {
+function logmid(level = 'low', logmog) {
     return function(req, res, next) {
-        let logmog = new Logger(true);
-        let httplog = '';
         if (level === 'low') {
             logmog.cflog(
                 `*** Recived a request, ${req.method}: (${req.url}) ***`
