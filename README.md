@@ -37,10 +37,4 @@ app.use(logmid('low'));
 
 </code>
 
-Contcat information:
-
-+98-9120229077
-
-[logmog.copene.com](https://siaqnbr.com)
 [codewithsia.com](https://codewithsia.com)
-[siaqbr.com](https://siaqnbr.com)
